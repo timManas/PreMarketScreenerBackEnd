@@ -14,25 +14,25 @@ const app = express()
 // Allow app to use JSON
 app.use(express.json())
 
-app.use('/premarket/', preMarketDataRoutes)
+app.use('/premarket', preMarketDataRoutes)
 
 // Initialize MongoDB
-const connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.MONGO_URI, {
-      useUnifiedTopology: true,
-      useNewUrlParser: true,
-      useCreateIndex: true,
-    })
-    console.log(`MongoDB Connected: ${conn.connection.host}`)
-  } catch (error) {
-    console.log(`Error: ${error.message}`)
-    process.exit(1) // exit(1) - means you return with error
-  }
-}
+// const connectDB = async () => {
+//   try {
+//     const conn = await mongoose.connect(process.env.MONGO_URI, {
+//       useUnifiedTopology: true,
+//       useNewUrlParser: true,
+//       useCreateIndex: true,
+//     })
+//     console.log(`MongoDB Connected: ${conn.connection.host}`)
+//   } catch (error) {
+//     console.log(`Error: ${error.message}`)
+//     process.exit(1) // exit(1) - means you return with error
+//   }
+// }
 
 // Connect Backend to MongoDB
-connectDB()
+// connectDB()
 
 // Run Morgan in developmenet Mode
 if (process.env.NODE_ENV === 'development') {

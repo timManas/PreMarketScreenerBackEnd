@@ -4,6 +4,6 @@ import { getPreMarketData } from '../controllers/preMarketDataController.js'
 
 const router = express.Router()
 
-router.get('/', getPreMarketData)
+router.route('/').get(getPreMarketData)
 
 export default router
