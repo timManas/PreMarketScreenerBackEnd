@@ -3,12 +3,18 @@ import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import morgan from 'morgan'
+import preMarketDataRoutes from './routes/preMarketRoutes.js'
 
 // Initialize Dot Env File
 dotenv.config()
 
 // Initialize Express
 const app = express()
+
+// Allow app to use JSON
+app.use(express.json())
+
+app.use('/premarket/', preMarketDataRoutes)
 
 // Initialize MongoDB
 const connectDB = async () => {
