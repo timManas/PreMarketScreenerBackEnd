@@ -1,20 +1,8 @@
 [
   {
     "symbol": "AAPL",
-    "price": 100,
+    "price": "100",
     "change": "+12",
-    "private": true
-  },
-  {
-    "symbol": "BAC",
-    "price": 200,
-    "change": "+11",
-    "private": true
-  },
-  {
-    "symbol": "BAC",
-    "price": 300,
-    "change": "+11",
-    "private": true
+    "private": "true"
   }
 ]
